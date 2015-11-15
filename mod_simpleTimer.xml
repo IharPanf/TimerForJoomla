@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="1.7" client="site" method="upgrade">
+    <name>SimpleTimer</name>
+    <author>Stoik</author>
+    <creationDate>04.2015</creationDate>
+    <copyright>Copyright (C) 2015</copyright>
+    <license>GNU/GPL</license>
+    <authorEmail>pif13@tut.by</authorEmail>
+    <authorUrl>pratsa.ru</authorUrl>
+    <version>1.00</version>
+    <description><![CDATA[
+		<div class="descrip">
+		    <h1>Таймер обратного отсчета.</h1>
+		    <hr>
+		    <p>Модуль отображения таймера обратного отсчета для Jommla v3.x.</p>
+		    <h3>В указанной позиции на сайте отображает таймер обратного отсчета:</h3>
+		        <ul>
+		            <li>для отображения применяется CSS  стиль выбранный в настройках модуля;</li>
+		            <li>позволяет выводить вместе с таймером произвольный текст ("До конца акции осталось.");</li>
+		            <li>позволяет указывать время начала действия таймера и время завершения.</li>
+		            <li>задавать время действия - непрерывно в течении суток.</li>
+			     </ul>
+			<div class="author">
+			     По вопросам доработки модулю под свои нужды можно обратиться <a href="mailto:pif13@tut.by">сюда</a>
+			</div>
+		</div>
+		<style type="text/css">
+			div.descrip { padding: 10px; font-family: Arial; font-size:13px !important; font-weight: normal !important; text-align: justify; color: #4d4d4d; line-height: 24px; }
+			divn.descrip h1 { clear:both; font-family: Georgia, sans-serif; font-size:38px; margin:30px 20px 23px; padding:0px 0px 24px 10px; color:#333; border-bottom: 1px solid #eee; font-weight: normal; }
+			div.descrip p { margin: 0 26px 10px }
+			.autor {
+			    font-decoration:italic;
+			}
+		</style>
+	]]></description>
+    <files>
+        <filename module="mod_simpleTimer">mod_simpleTimer.php</filename>
+        <filename module="mod_simpleTimer">index.html</filename>
+        <filename module="mod_simpleTimer">showtime.php</filename>
+    	<folder>tmpl</folder>
+        <folder>admin</folder>
+        <folder>js</folder>
+        <folder>css</folder>
+    </files>
+<config>
+    <fields name="params" addfieldpath="/modules/mod_simpleTimer/admin/elements">
+        <fieldset name="basic" addfieldpath="/modules/mod_simpleTimer/admin/elements">
+
+            <field name="showText" type="radio" class="btn-group" default="0" label="Показывать текст"  description="Показывать текст">
+                <option value="0">Нет</option>
+                <option value="1">Да</option>
+            </field>
+
+            <field  name="showTextTimer" type="text" default="До конца акции осталось" label="Текст для отображения" />
+
+            <field name="showPeri" type="radio" class="btn-group" default="0" label="Непрерывно" description="Показывать непрерывно">
+                <option value="0">Нет</option>
+                <option value="1">Да</option>
+            </field>
+
+
+            <field  name="cap1" type="showTime" default="" label="" />
+
+            <field  name="startDate" type="calendar" default="" label="Начало работы" />
+            <field  name="startTime" type="text" default="0" label="Часы" pattern=""/>
+
+            <field  name="endDate" type="calendar" default="" label="Завершение работы" />
+            <field  name="endTime" type="text" default="0" label="Часы" />
+
+            <field  name="cap2" type="caption" default="" label="" />
+            <field  name="formatDate" type="text" default="YWDMS" label="Формат таймера" description="Y - отображать года;
+            W - недели, D - дни, M - минуты, S - секунды  "/>
+
+            <field name="showZero" type="radio" class="btn-group" default="1" label="Показывать  ноль"  description="Показывать ведущий ноль">
+                <option value="0">Нет</option>
+                <option value="1">Да</option>
+            </field>
+
+             <field name="layout" type="list" default="default" label="Стиль"  description="Шаблон отображения таймера">
+                 <option value="other">other</option>
+                 <option value="default">default</option>
+             </field>
+    </fieldset>
+
+    </fields>
+</config>
+</extension>

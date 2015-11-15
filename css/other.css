@@ -1,0 +1,19 @@
+.tYear,.tWeek,.tDay, .tHour, .tMin, .tSec {
+    float:left;
+    font-weight: bold;
+    font-size: 56px;
+    line-height: 1.2;
+    color: #ff1234;
+    padding-right: 10px;
+    margin: 0 auto;
+}
+#ShowText{
+    text-align: center;
+    color: #2348d9;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 1.2;
+}
+.setCenter{
+    margin-left: 10%;
+}
